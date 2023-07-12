@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 35px;
+    font-family: 'Belanosima', sans-serif;
+}
+
+
+h1 {
+    width: 100vw;
+    height: 10vh;
+    background-color: rgba(0, 0, 0, 0.13);
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 2.7vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 5px solid black;
+}
+
+
+
+
+
+
+
+.container {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+label {
+    font-weight: bold;
+    font-size: 2.5vh;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    gap: 5%;
+    background-color: rgba(0, 0, 0, 0.13);
+    height: 65vh;
+    border-radius: 20px;
+}
+
+select, input {
+    border-radius: 10px;
+    font-size: 3vh;
+    text-align: center;
+}
+
+
+.inputAjout {
+    width: 70%;
+    height: 100px;
+    font-weight: bold;
+    font-size: 3vh;
+}
+
+.inputChallenge {
+    width: auto;
+}
+
+.input_pts {
+    width: 200px;
+}
+
+select {
+    width: 70%;
+}
+
+.btnAjout {
+    width: 60%;
+    font-size: 2.5vh;
+    border-radius: 30px;
+    background-color: rgba(34, 255, 0, 0.37);
+}

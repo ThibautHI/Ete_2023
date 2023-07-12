@@ -2,19 +2,36 @@
 
 ini_set('display_errors', 1);
 
+//echo $_POST['challenge_id'];
+
 // informations de connexion à la base de données MySQL
 /*$host = 'localhost';
 $dbname = 'id20668206_challenge';
 $username = 'id20668206_mathieu';
 $password = 'Db#9O-SwRezBd\m6';*/
 
+
+
 $host = 'localhost';
 $dbname = 'id20668206_challenge';
 $username = 'root';
 $password = '';
 
+
+//echo $_POST['challenge_id'];
+
+$tabChallenge = json_decode($_POST['challenge_id'], true);
+
+echo $tabChallenge['id'] . "<br>";
+echo $tabChallenge['lastname'] . "<br>";
+echo $tabChallenge['challenge'] . "<br>";
+echo $tabChallenge['pts'] . "<br>";
+echo $tabChallenge['realiser'] . "<br>";
+
+
 // chaîne de connexion PDO
 $dsn = "mysql:host=$host;dbname=$dbname;charset=utf8mb4";
+
 try {
     // instanciation de la classe PDO
     $pdo = new PDO($dsn, $username, $password);
@@ -24,19 +41,15 @@ try {
     $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
     // Requête préparée
-    $sql = "INSERT INTO `challenge` (`id`, `user_id`, `name`, `pts`, `fait`) VALUES (NULL, ?, ?, ?, ?);";
+    $sql = "DELETE FROM challenge WHERE id = ?";
     $stmt = $pdo->prepare($sql);
 
     // Paramètres de la requête
-    $user_id = $_POST['choix_joueur'];
-    $name = $_POST['challenge'];
-    $pts = $_POST['points'];
-    $fait = 0;
+    $challenge_id = (int)$tabChallenge['id'];
+    $stmt->bindParam(1, $challenge_id);
+    $stmt->execute();
 
-    // Exécution de la requête préparée
-    $stmt->execute([$user_id, $name, $pts, $fait]);
-
-    // Revien sur la page ajoutChallenge.php
+    // Revient sur la page ajoutChallenge.php
     header('Location: ../ajoutChallenge.php');
 
 
