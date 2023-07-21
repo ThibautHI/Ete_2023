@@ -1,0 +1,114 @@
+/* listeChallenge.css */
+/* ... (vos autres styles CSS) ... */
+
+/* Styles pour le div choixJoueur */
+.choixJoueur {
+    text-align: center;
+    margin-bottom: 20px;
+    display: flex; /* Utiliser la flexbox pour la disposition en colonnes */
+    flex-wrap: wrap; /* Permettre le retour à la ligne si besoin */
+    justify-content: center; /* Centrer les formulaires horizontalement */
+}
+
+.choixJoueur form {
+    margin: 10px;
+}
+
+.joueurButton {
+    padding: 10px 20px;
+    background-color: #007BFF; /* Couleur de fond du bouton */
+    color: #fff; /* Couleur du texte du bouton */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.selectedJoueurButton {
+    padding: 10px 20px;
+    background-color: #38c278; /* Couleur de fond du bouton */
+    color: #fff; /* Couleur du texte du bouton */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.choixJoueur input[type="submit"]:hover {
+    background-color: #0056b3; /* Couleur de fond du bouton au survol */
+}
+
+/* Nouveaux styles pour le tableau */
+.tab_Challenge {
+    width: 100%;
+    max-width: auto;
+    margin: 0;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Styles pour les lignes du tableau */
+.tab_Challenge tr {
+    background-color: #fff; /* Couleur de fond pour les lignes du tableau */
+}
+
+/* Styles pour les cellules du tableau */
+.tab_Challenge td {
+    padding: 8px;
+    text-align: center;
+}
+
+/* Styles pour le titre */
+.titre {
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px; /* Réduire la marge en bas du titre */
+}
+
+/* Styles pour les boutons Valider et Annuler */
+.Buttonvalider {
+    padding: 8px 16px;
+    background-color: #3498db;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+}
+
+.ButtonAnnuler {
+    padding: 8px 16px;
+    background-color: #b76969;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+}
+
+/* Styles pour les icônes */
+.fa-trash, .fa-check {
+    margin-right: 5px;
+}
+
+/* Nouveau style pour l'image de plage en arrière-plan */
+body {
+    background-image: url('../image/couchesoleil.jpg'); /* Remplacer 'plage.jpg' par le chemin de l'image de plage */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* Media queries pour les petits écrans (téléphones) */
+@media (max-width: 600px) {
+    .choixJoueur {
+        flex-direction: column; /* Afficher les formulaires en colonne sur les petits écrans */
+        align-items: center; /* Centrer les formulaires verticalement */
+    }
+
+    .choixJoueur form {
+        width: 100%; /* Utiliser toute la largeur disponible pour les formulaires */
+    }
+}
